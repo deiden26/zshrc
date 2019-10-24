@@ -46,7 +46,7 @@ alias diffb='git diff $(git merge-base --fork-point develop)'
 export LSCOLORS=ExFxBxDxCxegedabagacad
 
 # Preferred editor
-export EDITOR='mvim'
+export EDITOR='vim'
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # Functions
