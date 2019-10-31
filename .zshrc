@@ -20,6 +20,7 @@ plugins=(
   # Custom plugins
   zsh-autosuggestions
   zsh-nvm
+  autoupdate
 )
 
 source $ZSH/oh-my-zsh.sh
