@@ -3,12 +3,7 @@
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 # Path to oh-my-zsh installation.
-if [ -d "/Users/deiden" ]; then
-  export ZSH="/Users/deiden/.oh-my-zsh"
-fi
-if [ -d "/Users/dannyeiden" ]; then
-  export ZSH="/Users/dannyeiden/.oh-my-zsh"
-fi
+export ZSH="/Users/$USER/.oh-my-zsh"
 
 ZSH_THEME="agnoster"
 
@@ -33,8 +28,9 @@ source $ZSH/oh-my-zsh.sh
 # Enable ompletiton
 test -f ~/.zsh-completion.bash && . $_
 
-# Activate syntax highlighting
-source /Users/dannyeiden/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# Activate syntax highlighting. Follow these instructions for a new machine
+# https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md#oh-my-zsh
+source /Users/$USER/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # Aliases
