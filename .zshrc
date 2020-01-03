@@ -38,6 +38,9 @@ source /Users/$USER/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax
 alias zshconfig='vim ~/.zshrc'
 alias trim='git branch --merged | grep -v "\*" | grep -v "master" | xargs -n 1 git branch -d'
 alias diffb='git diff $(git merge-base --fork-point master)'
+alias v='nvim'
+# TODO remove this once you start using v so you can use vim on purpose
+alias vim='echo "Use NeoVim, you butt"; v'
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # Source machine-specific settings
@@ -52,7 +55,7 @@ alias diffb='git diff $(git merge-base --fork-point master)'
 export LSCOLORS=ExFxBxDxCxegedabagacad
 
 # Preferred editor
-export EDITOR='vim'
+export EDITOR='nvim'
 
 # Activate rbenv
 if [ -x "$(command -v rbenv)" ]; then
