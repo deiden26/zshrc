@@ -11,12 +11,13 @@ ZSH_THEME="agnoster"
 # Standard plugins can be found in ~/.oh-my-zsh/plugins/*
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 plugins=(
+  bundler
   git
   httpie
   npm
+  thefuck
   vagrant
   vi-mode
-  thefuck
   # Custom plugins
   zsh-autosuggestions
   zsh-nvm
@@ -39,8 +40,6 @@ alias zshconfig='vim ~/.zshrc'
 alias trim='git branch --merged | grep -v "\*" | grep -v "master" | xargs -n 1 git branch -d'
 alias diffb='git diff $(git merge-base --fork-point master)'
 alias v='nvim'
-# TODO remove this once you start using v so you can use vim on purpose
-alias vim='echo "Use NeoVim, you butt"; v'
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # Source machine-specific settings
