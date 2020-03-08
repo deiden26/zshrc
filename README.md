@@ -15,6 +15,8 @@ git clone https://github.com/TamCore/autoupdate-oh-my-zsh-plugins $ZSH_CUSTOM/pl
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 # zsh-nvm
 git clone https://github.com/lukechilds/zsh-nvm ~/.oh-my-zsh/custom/plugins/zsh-nvm
+# Powerlevel10k
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
 ```
 2. Clone this repo
 3. `cd` into it
@@ -23,7 +25,7 @@ git clone https://github.com/lukechilds/zsh-nvm ~/.oh-my-zsh/custom/plugins/zsh-
 # 1.Link the .zshrc file
 ln -s $PWD/.zshrc /Users/$USER/.zshrc
 # 2. Link the powerlevel10k file
-ln -s $PWD/.p10k.zsh /Users$USER/.p10k.zsh
+ln -s $PWD/.p10k.zsh /Users/$USER/.p10k.zsh
 # 3. Source the .zshrc file and follow any instructions
 source ~/.zshrc
 ```
