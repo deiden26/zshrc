@@ -85,3 +85,19 @@ notify() {
     local message=${1:-"Done"}
     echo @notify:$message
 }
+
+# Partial matching git checkout
+checkout() {
+  branch=$(git branch | grep "$@" -F)
+  if [[ $branch == *$'\n'* ]]; then
+    printf "\e[31mMultiple branches match \"$@\"\e[0m\n" 1>&2
+    printf "$branch\n"
+    return 1
+  fi
+  if [[ $branch == '' ]]; then
+    printf "\e[31mNo branches match \"$@\"\e[0m\n" 1>&2
+    return 1
+  fi
+  branch=$(echo $branch | sed 's/^\*//g' | xargs)
+  git checkout "$branch"
+}
