@@ -9,7 +9,7 @@ fi
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-# zsh Specific Settings
+# Oh-my-zsh, Plugins and Theme
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 # Path to oh-my-zsh installation.
@@ -34,17 +34,10 @@ plugins=(
   autoupdate
   zsh-autosuggestions
   zsh-nvm
+  zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
-
-# Enable ompletiton
-test -f ~/.zsh-completion.bash && . $_
-
-# Activate syntax highlighting. Follow these instructions for a new machine
-# https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md#oh-my-zsh
-source /Users/$USER/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # Aliases
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
