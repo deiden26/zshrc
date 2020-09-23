@@ -61,9 +61,24 @@ export LSCOLORS=ExFxBxDxCxegedabagacad
 # Preferred editor
 export EDITOR='nvim'
 
+# Add some homebrew packages to the path
+export PATH="/usr/local/sbin:$PATH"
+
+# Add poetry to the path
+export PATH="$HOME/.poetry/bin:$PATH"
+
+# Add pyenv to the path
+export PATH="$HOME/.pyenv/bin:$PATH"
+
 # Activate rbenv
 if [ -x "$(command -v rbenv)" ]; then
   eval "$(rbenv init -)"
+fi
+
+# Activate pyenv
+if [ -x "$(command -v pyenv)" ]; then
+  eval "$(pyenv init -)"
+  eval "$(pyenv virtualenv-init -)"
 fi
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -73,10 +88,10 @@ fi
 # Run silently in the background
 br () { "$@" 1>/dev/null 2>/dev/null & }
 
-# Trigger system message
+# Trigger system message on Macs
 notify() {
     local message=${1:-"Done"}
-    echo @notify:$message
+    osascript -e "display notification \"${message}\" with title \"iTerm\" sound name \"Glass\""
 }
 
 # Partial matching git checkout
