@@ -51,6 +51,14 @@ fi
 BUNDLED_COMMANDS=(tapioca)
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# lukechilds/zsh-nvm
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Show autocomplete suggestions in the shell
+export NVM_COMPLETION=true
+# Automatically use Node version in .nvmrc files
+export NVM_AUTO_USE=true
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # Install zinit
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
@@ -144,9 +152,6 @@ if type rg &> /dev/null; then
   # Use ripgrep if available
   export FZF_DEFAULT_COMMAND='rg --files'
 fi
-
-# Automatically use Node version in .nvmrc files
-export NVM_AUTO_USE=true
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # Source machine-specific settings
