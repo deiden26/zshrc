@@ -48,7 +48,7 @@ fi
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # OMZP::bundler
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-BUNDLED_COMMANDS=(tapioca)
+BUNDLED_COMMANDS=(srb tapioca)
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # lukechilds/zsh-nvm
