@@ -53,8 +53,6 @@ BUNDLED_COMMANDS=(srb tapioca)
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # lukechilds/zsh-nvm
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-# Show autocomplete suggestions in the shell
-export NVM_COMPLETION=true
 # Automatically use Node version in .nvmrc files
 export NVM_AUTO_USE=true
 
