@@ -79,14 +79,7 @@ autoload -Uz _zinit
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # Oh-My-Zsh Plugins
 zinit snippet OMZP::bundler
-zinit snippet OMZP::git
-# zinit ice as="completion"
-# zinit snippet OMZP::httpie
-zinit snippet OMZP::npm
-zinit snippet OMZP::thefuck
-zinit snippet OMZP::vagrant
 zinit snippet OMZP::vi-mode
-zinit snippet OMZP::virtualenv
 zinit snippet OMZP::colored-man-pages
 
 # Oh-My-Zsh Libraries
@@ -95,10 +88,9 @@ zinit snippet OMZL::completion.zsh
 
 
 # Other Plugins
-zinit light MichaelAquilina/zsh-autoswitch-virtualenv
-zinit light lukechilds/zsh-nvm
-zinit light hlissner/zsh-autopair
-zinit light wfxr/forgit
+zinit light-mode wait lucid for \
+  lukechilds/zsh-nvm \
+  hlissner/zsh-autopair
 
 # Theme
 zinit ice depth=1
@@ -106,11 +98,13 @@ zinit light romkatv/powerlevel10k
 
 # Completions, Syntax Highlighting, & Suggestions
 zinit ice wait lucid atinit="ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay"
-zinit load zdharma-continuum/fast-syntax-highlighting
+zinit light zdharma-continuum/fast-syntax-highlighting
 zinit ice wait lucid blockf
-zinit load zsh-users/zsh-completions
+zinit light zsh-users/zsh-completions
 zinit ice wait lucid atload="!_zsh_autosuggest_start"
-zinit load zsh-users/zsh-autosuggestions
+zinit light zsh-users/zsh-autosuggestions
+
+zinit light mroth/evalcache
 
 # Load a few important annexes, without Turbo
 # (this is currently required for annexes)
@@ -144,13 +138,12 @@ export PATH="$HOME/.pyenv/bin:$PATH"
 
 # Activate rbenv
 if [ -x "$(command -v rbenv)" ]; then
-  eval "$(rbenv init -)"
+  _evalcache rbenv init --no-rehash -
 fi
 
 # Activate pyenv
 if [ -x "$(command -v pyenv)" ]; then
-  eval "$(pyenv init -)"
-  eval "$(pyenv virtualenv-init -)"
+  _evalcache pyenv init - zsh
 fi
 
 # Configure fzf
