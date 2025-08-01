@@ -115,12 +115,6 @@ fi
 BUNDLED_COMMANDS=(srb tapioca)
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-# lukechilds/zsh-nvm
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-# Automatically use Node version in .nvmrc files
-export NVM_AUTO_USE=true
-
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # Install zinit
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
@@ -153,7 +147,6 @@ zinit snippet OMZL::completion.zsh
 
 # Other Plugins
 zinit light-mode wait lucid for \
-  lukechilds/zsh-nvm \
   hlissner/zsh-autopair
 
 # Theme
@@ -167,8 +160,6 @@ zinit ice wait lucid blockf
 zinit light zsh-users/zsh-completions
 zinit ice wait lucid atload="!_zsh_autosuggest_start"
 zinit light zsh-users/zsh-autosuggestions
-
-zinit light mroth/evalcache
 
 # Load a few important annexes, without Turbo
 # (this is currently required for annexes)
@@ -191,29 +182,14 @@ zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 # Preferred editor
 export EDITOR='nvim'
 
-# Add some homebrew packages to the path
-export PATH="/usr/local/sbin:$PATH"
-
-# Add poetry to the path
-export PATH="$HOME/.poetry/bin:$PATH"
-
-# Add pyenv to the path
-export PATH="$HOME/.pyenv/bin:$PATH"
-
-# Activate rbenv
-if [ -x "$(command -v rbenv)" ]; then
-  _evalcache rbenv init --no-rehash -
-fi
-
-# Activate pyenv
-if [ -x "$(command -v pyenv)" ]; then
-  _evalcache pyenv init - zsh
-fi
-
 # Configure fzf
 if type rg &> /dev/null; then
   # Use ripgrep if available
   export FZF_DEFAULT_COMMAND='rg --files'
+fi
+
+if [ -x ~/.local/bin/mise ]; then
+  eval "$(~/.local/bin/mise activate zsh)"
 fi
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
