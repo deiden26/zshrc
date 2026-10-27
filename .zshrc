@@ -196,6 +196,6 @@ fi
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # Source machine-specific settings
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-if [ -f ~/.zshrc-alto ]; then
-  source ~/.zshrc-alto
+if [ -f ~/.zshrc-twilio ]; then
+  source ~/.zshrc-twilio
 fi
